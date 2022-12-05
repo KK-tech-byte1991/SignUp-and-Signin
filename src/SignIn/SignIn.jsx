@@ -8,8 +8,6 @@ import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import Button from '@mui/material/Button';
 import validator from 'validator';
 
-import { useHistory } from 'react-router-dom';
-let history = useHistory;
 function Item(props) {
   const { sx, ...other } = props;
   return (
@@ -67,60 +65,26 @@ export default function SignUp() {
     }
   };
 
-  const handleSubmit = () => {
-    history.push('/home');
-  };
+  const handleSubmit = () => {};
   return (
     <div
       style={{
-        width: '80%',
+        width: '40%',
         margin: 'auto',
         padding: '50px',
         border: 'solid',
         borderRadius: '10px',
       }}
     >
-      <h4>Sign Up</h4>
+      <h4>Sign In</h4>
       <Box
         sx={{
           display: 'grid',
           columnGap: 3,
           rowGap: 1,
-          gridTemplateColumns: 'repeat(2, 1fr)',
+          gridTemplateColumns: 'repeat(1, 1fr)',
         }}
       >
-        <Item>
-          <TextField
-            style={{ width: '100%' }}
-            id="first-name"
-            label="First Name"
-            variant="standard"
-          />
-        </Item>
-        <Item>
-          <TextField
-            style={{ width: '100%' }}
-            id="last-name"
-            label="Last Name"
-            variant="standard"
-          />
-        </Item>
-        <Item style={{ textAlign: 'center' }}>
-          <LocalizationProvider dateAdapter={AdapterDayjs}>
-            <DatePicker
-              style={{ width: '100%' }}
-              variant="standard"
-              label="Date Of Birth"
-              value={value}
-              margin="none"
-              maxDate={new Date()}
-              onChange={(newValue) => {
-                setValue(newValue);
-              }}
-              renderInput={(params) => <TextField {...params} />}
-            />
-          </LocalizationProvider>
-        </Item>
         <Item>
           <TextField
             style={{ width: '100%' }}
@@ -141,15 +105,6 @@ export default function SignUp() {
             variant="standard"
           />
         </Item>
-        <Item>
-          <TextField
-            style={{ width: '100%' }}
-            variant="standard"
-            id="outlined-number"
-            label="Phone Number"
-            type="number"
-          />
-        </Item>
       </Box>
 
       <Button
@@ -157,7 +112,7 @@ export default function SignUp() {
         variant="contained"
         onClick={handleSubmit}
       >
-        Sign Up
+        Sign In
       </Button>
     </div>
   );
